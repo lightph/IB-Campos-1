@@ -172,5 +172,231 @@ $$ H = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \omega_p \left( a_{\vec{p}}^\dagger a_
     \item El segundo término es formalmente divergente; $\comm{a_{\vec{p}}}{a_{\vec{p}}^\dagger} \propto \delta^{(d-1)}(0)$. Viene de sumar energías de punto 0 ($\frac{1}{2}\hbar\omega$) para un número infinito de osciladores (uno en cada sitio).\\
           Además $\int d^{d-1}p \, \omega_p$ también diverge, debido a que $\omega_p \sim |\vec{p}|$ (divergencia ultravioleta).
     \item[*] Este tipo de divergencias UV aparecen mucho en QFT. Una forma de regularizarlas es con la red.
+    \item En observables físicos de QFT se cancelan (por ejemplo, diferencias de energías). Pero en presencia de gravedad son importantes. \underline{Problema de la constante Cosmológica}: la teoría cuántica predice $\varepsilon_0$ gigante (controlada por cutoff UV). Pero experimentalmente $\varepsilon_0 \sim 10^{-120} \times \varepsilon_{\text{Planck}}$.
+    \item Ej: analizar divergencias IR / UV.
 \end{itemize}
 
+\vspace{0.5cm}
+\noindent \underline{Espectro de la teoría}
+\begin{itemize}
+    \item Ya que $\comm{H}{a_{\vec{p}}^\dagger} = \omega_p a_{\vec{p}}^\dagger$, $\comm{H}{a_{\vec{p}}} = -\omega_p a_{\vec{p}}$ el espectro se obtiene como en el caso del oscilador armónico:
+    \item[—] Vacío / estado fundamental $\ket{0} :\forall \vec{p}\quad a_{\vec{p}}\ket{0} = 0$. En general se sustrae la energía de punto 0 y entonces $E_0 = 0$.
+    \item[—] Estados excitados: $a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger \dots \ket{0}$ tienen $E = \omega_{\vec{p}} + \omega_{\vec{q}} + \dots$. Siempre tienen $E > 0$.\\
+        Para enfatizar que $\omega_p$ (frecuencia) define la energía de una excitación, en general vamos a notar $E_{\vec{p}} \equiv \omega_{\vec{p}}$ para estados de 1-partícula.
+    \item Operador momento:
+          $$ P^i = \int d^{d-1}x \, T^{0i} = -\int d^{d-1}x \, \pi(\vec{x}) \del_i \phi(\vec{x}) $$
+\end{itemize}
+
+$$ P^i = \int d^{d-1}x \, p_i a_{\vec{p}}^\dagger a_{\vec{p}} $$
+$a_{\vec{p}}^\dagger$ crea estado de momento $\vec{p}$ y energía $\omega_{\vec{p}} = \sqrt{\vec{p}^2 + m^2}\ \equiv$ relación de dispersión relativista para partícula de masa $m$ y momento $\vec{p}$.
+
+\begin{itemize}
+    \item \underline{Partículas}: interpretamos a $a_{\vec{p}}^\dagger \ket{0}$ como un estado de una partícula relativista de masa $m$ y momento $\vec{p}$.
+    \item Espacio de Hilbert: $\ket{0}, a_{\vec{p}}^\dagger \ket{0}, a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger \ket{0} \dots$ $\rightarrow$ estados multipartícula.
+    \item[—] Los $a^\dagger$ conmutan
+    \item[—] Un modo $\vec p$ puede contener infinitas partículas.
+
+        $\Rightarrow$ bosones
+\end{itemize}
+
+{\centering
+\fbox{Partículas $\equiv$ excitaciones de campos cuánticos.}
+\par}
+
+\vspace{0.5cm}
+\noindent Notar: estas partículas tienen momento $\vec{p}$ definido y no están localizadas en posición (son ondas planas). Se puede formar un paquete de ondas parcialmente localizado:
+$$ \ket{\varphi} = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \varphi(\vec{p}) a_{\vec{p}}^\dagger \ket{0} $$
+
+\vspace{0.5cm}
+\noindent \underline{Normalización relativista}:
+\begin{itemize}
+    \item[—] Elegimos $\braket{0}{0} = 1$.
+    \item[—] El estado $a_{\vec{p}}^\dagger \ket{0}$ satisface: $\matrixel{0}{a_{\vec{p}} a_{\vec{q}}^\dagger}{0} = (2\pi)^{d-1} \delta^{(d-1)}(\vec{p} - \vec{q})$
+\end{itemize}
+
+\noindent Este producto interno no es invariante de Lorentz.
+\begin{itemize}
+    \item Queremos que la norma de los estados de partícula sea invariante de Lorentz: \\
+          si $p^{\prime \mu} = \Lambda^\mu_{\ \ \nu} p^\nu$ entonces $\ket{p'} = \ket{\Lambda p} = U(\Lambda) \ket{p}$ \\
+          con $U$ unitario. Es decir, queremos que las simetrías actúen como operadores unitarios sobre $\mathcal{H}$.
+\end{itemize}
+Para encontrar la normalización, notamos:
+$$ \int d^d p \, \delta(p^2 - m^2) \equiv \text{invariante de Lorentz} . $$
+Ahora $p^2 - m^2 = 0$ tiene 2 soluciones: $p_0 = \pm \omega_{\vec{p}}$ \\
+Elegimos la rama $p_0 > 0$ (la elección de rama es invariante de Lorentz).
+$$ \Rightarrow \int_{p^0 > 0} d^d p \, \delta(p^2 - m^2) = \int \frac{d^{d-1}p}{2p^0} \Bigg|_{p^0 = \omega_{\vec{p}}} \text{ invariante de Lorentz} $$
+y entonces $2\omega_{\vec{p}} \delta^{(d-1)}(\vec{p})$ invariante de Lorentz, ya que $$\int \frac{d^{d-1}p}{2\omega_{\vec{p}}} 2\omega_{\vec{p}} \delta^{(d-1)}(\vec{p}) = 1$$.
+
+\noindent $\therefore$ Estados con normalización relativista: $\ket{\vec{p}} = \sqrt{2\omega_{\vec{p}}} a_{\vec{p}}^\dagger \ket{0}$ (El factor $\sqrt{2}$ es por conveniencia).
+En particular, la relación de completitud para estados de 1 partícula queda
+$$ (\mathbb{I})_{\text{1-part}} = \int \frac{d^{d-1}p}{(2\pi)^{d-1} 2\omega_{\vec{p}}} \ket{\vec{p}}\bra{\vec{p}} $$
+
+\begin{itemize}
+    \item Además,
+          $$ \phi(\vec{x})\ket{0} = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2\omega_{\vec{p}}} e^{-i \vec{p} \cdot \vec{x}} \ket{\vec{p}} $$
+          $\Rightarrow$ superposición lineal de estados 1-partícula de momento definido. \\
+          Ya que
+          $$ \matrixel{\vec{p}}{\phi(\vec{x})}{0} = e^{-i \vec{p} \cdot \vec{x}} $$
+          (en analogía con Mecánica Cuántica no relativista, donde $\braket{\vec{p}}{\vec{x}} = e^{-i \vec{p} \cdot \vec{x}}$) \\
+          interpretamos:
+\end{itemize}
+{\centering
+\fbox{ $\phi(\vec{x})\ket{0}$ crea una partícula relativista en $\vec{x}$.}
+\par}
+
+\vspace{0.5cm}
+\subsection{PROPAGACIÓN EN EL ESPACIO-TIEMPO}
+\begin{itemize}
+    \item Ahora vamos a estudiar la dinámica de campos cuánticos en el espacio-tiempo. Esto se hace pasando a la representación de Heisenberg.
+    \item Nos va a permitir entender varios puntos importantes: propagadores, causalidad, ...
+\end{itemize}
+
+\noindent \underline{Representación de Heisenberg}
+\begin{itemize}
+    \item En la representación de Schrödinger tenemos estados que evolucionan y operadores independientes de $t$:
+          $$ i \frac{d\ket{\psi}}{dt} = H \ket{\psi} \Rightarrow \ket{\psi(t)} = e^{-iHt} \ket{\psi(0)} . $$
+          Representación de Heisenberg: $\matrixel{\psi(0)}{O_H(t)}{\psi(0)} = \matrixel{\psi(t)}{O_S}{\psi(t)}$
+\end{itemize}
+$$\implies O_H(t) = e^{iHt} O_S e^{-iHt} \quad , \quad i \frac{dO_H}{dt} = \comm{O_H}{H} $$
+
+\newpage
+\begin{flushright}
+    15.
+\end{flushright}
+
+\begin{itemize}
+    \item Para el campo escalar,
+          $$ \phi(x) \equiv \phi(\vec{x},t) \equiv e^{iHt} \phi(\vec{x}) e^{-iHt} $$
+          Los operadores en las dos representaciones coinciden a $t=0$. \\
+          y las relaciones de conmutación quedan
+          $$ \comm{\phi(\vec{x},t)}{\pi(\vec{y},t)} = i \delta^{(d-1)}(\vec{x}-\vec{y}) $$
+          $$ \comm{\phi(\vec{x},t)}{\phi(\vec{y},t)} = \comm{\pi(\vec{x},t)}{\pi(\vec{y},t)} = 0 \quad \text{tiempos iguales} $$
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \underline{Evolución del campo escalar libre}
+\begin{itemize}
+    \item Determinamos la ecuación de movimiento del campo cuántico:
+          $$ H = \frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + (\nabla \phi(\vec{y},t))^2 + m^2 \phi(\vec{y},t)^2 \right\} $$
+          $$ i \dot{\phi} = \comm{\phi}{H} \quad , \quad i \dot{\pi} = \comm{\pi}{H} $$
+          $$ i \frac{\partial}{\partial t} \phi(\vec{x},t) = \comm{\phi(\vec{x},t)}{\frac{1}{2} \int d^{d-1}y \, \pi(\vec{y},t)^2} \quad \text{(los demás términos conmutan)} $$
+          $$ = \int d^{d-1}y \, i \delta^{(d-1)}(\vec{x}-\vec{y}) \pi(\vec{y},t) $$
+          $$ = i \pi(\vec{x},t) \quad (1) $$
+          $$ i \frac{\partial}{\partial t} \pi(\vec{x},t) = \comm{\pi(\vec{x},t)}{\frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + \phi(\vec{y},t)(-\nabla^2 + m^2)\phi(\vec{y},t) \right\}} $$
+          $$ = \int d^{d-1}y \left\{ -i \delta^{(d-1)}(\vec{x}-\vec{y}) (-\nabla^2 + m^2)\phi(\vec{y},t) \right\} $$
+          $$ = -i (-\nabla^2 + m^2)\phi(\vec{x},t) \quad (2) $$
+          (1)+(2): $\frac{\partial^2 \phi}{\partial t^2} = (\nabla^2 - m^2)\phi \Rightarrow (\Box + m^2)\phi(x) = 0$ \\
+          ecuación de Klein-Gordon para el campo cuántico \checkmark
+\end{itemize}
+
+\newpage
+\begin{flushright}
+    16.
+\end{flushright}
+
+\noindent Recordemos la energía de un estado de 1-partícula con momento $\vec{p}$
+$$ E_{\vec{p}} = \omega_{\vec{p}} = \sqrt{\vec{p}^2 + m^2} $$
+$$ \comm{H}{a_{\vec{p}}} = -E_{\vec{p}} a_{\vec{p}} \quad , \quad \comm{H}{a_{\vec{p}}^\dagger} = +E_{\vec{p}} a_{\vec{p}}^\dagger $$
+$$ \Rightarrow H a_{\vec{p}} = a_{\vec{p}}(H - E_{\vec{p}}) \quad , \quad H^n a_{\vec{p}} = a_{\vec{p}}(H - E_{\vec{p}})^n $$
+y similarmente, $H^n a_{\vec{p}}^\dagger = a_{\vec{p}}^\dagger (H + E_{\vec{p}})^n$ \\
+\underline{Probar}:
+$$ \Rightarrow e^{iHt} a_{\vec{p}} e^{-iHt} = e^{-iE_{\vec{p}}t} a_{\vec{p}} \quad , \quad e^{iHt} a_{\vec{p}}^\dagger e^{-iHt} = e^{+iE_{\vec{p}}t} a_{\vec{p}}^\dagger $$
+y entonces
+$$ \phi(\vec{x},t) = \int \frac{d^{d-1}p}{(2\pi)^{d-1} \sqrt{2E_{\vec{p}}}} \left( a_{\vec{p}} e^{-i p \cdot x} + a_{\vec{p}}^\dagger e^{+i p \cdot x} \right) \Bigg|_{p^0=E_{\vec{p}}} $$
+$\leftarrow$ frecuencia positiva (destruye partícula) \\
+$\leftarrow$ frecuencia negativa (crea partícula) \\
+El campo cuántico unifica / resuelve la dualidad onda-partícula:
+\begin{itemize}
+    \item $\phi(x)$ es un operador que, actuando sobre el espacio de Hilbert crea y destruye partículas (excitaciones del campo).
+    \item al mismo tiempo, $\phi(x)$ obedece la ecuación de Klein-Gordon y los dos términos en $\phi$ son soluciones de onda.
+    \item la función de onda $\Psi$ es un estado del espacio de Hilbert.
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \underline{Causalidad}
+\begin{itemize}
+    \item Un postulado fundamental en Física es causalidad: la causa precede al efecto en todo sistema de referencia.
+\end{itemize}
+
+\newpage
+\begin{flushright}
+    17.
+\end{flushright}
+
+\noindent En sistemas clásicos relativistas esto implica: velocidad máxima de propagación es $c$ (velocidad de la luz).
+Si el efecto estuviera afuera del cono de luz futuro de la causa, podemos aplicar un boost a otro sistema de referencia para hacer que suceda antes que la causa.
+
+\noindent ¿Qué implica la causalidad en mecánica cuántica?
+\begin{itemize}
+    \item \underline{Microcausalidad}: dados dos operadores observables $O_1, O_2$
+          $$ \comm{O_1(x)}{O_2(y)} = 0 \quad \forall (x-y)^2 < 0 $$
+          Requerimos que todos los operadores conmuten si están separados por una distancia tipo espacio. \\
+          En mecánica cuántica una medición perturba el sistema. \\
+          ¡Una medición en $x$ no puede afectar a una medición en $y$ si $(x,y)$ no están causalmente conectados! \\
+          Si tuviéramos $\comm{O_1}{O_2} \neq 0$ para $(x-y)^2 < 0$ un observador en $x$ puede decidir si medir o no $O_1(x)$. Un observador en $y$, midiendo $O_2(y)$ detecta lo que hizo $O_1$ a partir de lo que mide (ya que $O_2 \ket{\psi} \neq O_2 O_1 \ket{\psi}$). \\
+          $\Rightarrow$ comunicación a velocidad $> c$.
+\end{itemize}
+
+\newpage
+\begin{flushright}
+    18.
+\end{flushright}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{images/diagram_3_18.png}
+\end{center}
+
+\noindent Definimos $\Delta(x,y) \equiv \comm{\phi(x)}{\phi(y)}$ \\
+Usando la expresión de $\phi(\vec{x},t)$ en término de $a, a^\dagger$ y la relación de conmutación entre $a, a^\dagger$ \\
+(mostrar) $$ \Delta(x,y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2E_{\vec{p}}} \left( e^{-i p \cdot (x-y)} - e^{i p \cdot (x-y)} \right) $$
+\begin{itemize}
+    \item $\Delta(x,y)$ invariante de Lorentz sólo puede depender de $s^2 \equiv (x-y)^2$. \\
+          Si $s^2 < 0$, hagamos transformación de Lorentz tal que $x^0 = y^0$ \\
+          (transformación de Lorentz describe esta hipérbola)
+          $$ \Delta(s) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2(\vec{p}^2 + m^2)^{1/2}} \left( e^{i \vec{p} \cdot (\vec{x}-\vec{y})} - e^{-i \vec{p} \cdot (\vec{x}-\vec{y})} \right) $$
+          Redefiniendo $\vec{p} \rightarrow -\vec{p}$ en el segundo término, tenemos dos contribuciones iguales y opuestas \\
+          $\Rightarrow \Delta(x,y) = 0 \quad \text{si} \quad (x-y)^2 < 0$. \\
+          El campo escalar libre respeta causalidad. \\
+          (Si $(x-y)^2 > 0 \Rightarrow \Delta(x,y) \neq 0$.)
+    \item Causalidad es uno de los axiomas de QFT.
+\end{itemize}
+
+\newpage
+\begin{flushright}
+    19.
+\end{flushright}
+
+\noindent \underline{Propagador (función de Wightman)}
+\begin{itemize}
+    \item Observable importante en QFT: se prepara un estado de 1-partícula en $y$. Amplitud para encontrarla en $x$:
+          $$ D(x,y) = \matrixel{0}{\phi(x)\phi(y)}{0} \quad \text{propagador} $$
+          Reemplazando las expresiones para $\phi(x), \phi(y)$ con operadores de creación y destrucción, sólo sobrevive
+          $$ \matrixel{0}{a_{\vec{p}} a_{\vec{q}}^\dagger}{0} = (2\pi)^{d-1} \delta^{(d-1)}(\vec{p}-\vec{q}) $$
+          $$ \Rightarrow D(x,y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2E_{\vec{p}}} e^{-i p \cdot (x-y)} \quad \text{invariante de Lorentz } \checkmark $$
+    \item Comportamiento del propagador: \\
+          1) \underline{Adentro del cono de luz}: para $(x-y)^2 > 0$ Como $D(x,y)$ sólo depende de $s^2 = (x-y)^2$, podemos boostear para elegir $\vec{x} = \vec{y} = 0 \quad ; \quad x^0 - y^0 = t > 0$
+          $$ \Rightarrow D(x-y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2(\vec{p}^2 + m^2)^{1/2}} e^{-i (\vec{p}^2 + m^2)^{1/2} t} $$
+          La integral sólo depende de $\vec{p}^2 \Rightarrow$ usar coordenadas esféricas:
+          $$ \vec{p} = p\hat{n} \quad , \quad \hat{n} \cdot \hat{n} = 1 $$
+          $$ D(x-y) = \frac{1}{(2\pi)^{d-1}} \int d^{d-2}\Omega \int_0^\infty dp \, \frac{p^{d-2}}{2(p^2 + m^2)^{1/2}} e^{-i(p^2 + m^2)^{1/2}t} $$
+\end{itemize}
+
+\newpage
+\begin{flushright}
+    20.
+\end{flushright}
+
+$$ \int d^{d-2}\Omega = \text{Vol}(S^{d-2}) = \frac{2\pi^{\frac{d-1}{2}}}{\Gamma(\frac{d-1}{2})} $$
+$$ \Rightarrow D(x-y) = \frac{\text{Vol}(S^{d-2})}{2(2\pi)^{d-1}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} e^{-i(p^2 + m^2)^{1/2}t} $$
+Estimación: la integral converge ya que para $p \rightarrow \infty$ se cancelan las oscilaciones rápidas. Para $t \gg m, p \sim m$
+$$ D(x-y) \sim m^{d-2} e^{-imt} \quad \text{oscilatorio.} $$
+
+2) \underline{Afuera del cono de luz}: $(x-y)^2 < 0$. Boosteamos a $x^0 - y^0 = 0 \quad , \quad \vec{x} - \vec{y} = r\hat{z}$.
+$$ D(x-y) = \frac{1}{2(2\pi)^{d-1}} \int d^{d-2}\Omega \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} e^{i p r \cos\theta} $$
+Usar: $d\Omega_{d-2} = d\theta \sin^{d-3}\theta d\Omega_{d-3}$ \\
+($d\Omega_{d-2}^2 = d\theta^2 + \sin^2\theta d\Omega_{d-3}^2$)
+$$ \Rightarrow D(x-y) = \frac{\text{Vol}(S^{d-3})}{2(2\pi)^{d-1}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} \int_0^\pi d\theta \sin^{d-3}\theta e^{i p r \cos\theta} $$
+Representación integral: $J_\nu(z) = \frac{(z/2)^\nu}{\sqrt{\pi} \Gamma(\nu + 1/2)} \int_0^\pi d\theta \sin^{2\nu}\theta e^{i z \cos\theta}$
+$$ \Rightarrow D(x-y) = \frac{1}{(2\pi)^{\frac{d-1}{2}}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} \frac{J_{\frac{d-3}{2}}(pr)}{(pr)^{\frac{d-3}{2}}} $$
+Esta integral se puede hacer exacta (da $K_{\frac{d-3}{2}}(mr)$). \\
+En el plano complejo, la contribución viene del corte de $(p^2 + m^2)^{1/2}$ en $p = i m$
