@@ -1,0 +1,17 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.blg
+*.bbl
+*.xdv
+
+# Ignore compiled PDFs in the root directory
+/*.pdf
+
+# But do NOT ignore the reference files inside the pdfs/ folder
+!pdfs/
