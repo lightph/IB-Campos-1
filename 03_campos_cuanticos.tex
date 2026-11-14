@@ -259,40 +259,40 @@ $$ (\mathbb{I})_{\text{1-part}} = \int \frac{d^{d-1}p}{(2\pi)^{d-1} 2\omega_{\ve
 \end{itemize}
 $$\implies O_H(t) = e^{iHt} O_S e^{-iHt} \quad , \quad i \frac{dO_H}{dt} = \comm{O_H}{H} $$
 
-\newpage
-\begin{flushright}
-    15.
-\end{flushright}
-
 \begin{itemize}
     \item Para el campo escalar,
           $$ \phi(x) \equiv \phi(\vec{x},t) \equiv e^{iHt} \phi(\vec{x}) e^{-iHt} $$
-          Los operadores en las dos representaciones coinciden a $t=0$. \\
-          y las relaciones de conmutación quedan
+          Los operadores en las dos representaciones coinciden a $t=0$. Las relaciones de conmutación a tiempos iguales quedan
           $$ \comm{\phi(\vec{x},t)}{\pi(\vec{y},t)} = i \delta^{(d-1)}(\vec{x}-\vec{y}) $$
-          $$ \comm{\phi(\vec{x},t)}{\phi(\vec{y},t)} = \comm{\pi(\vec{x},t)}{\pi(\vec{y},t)} = 0 \quad \text{tiempos iguales} $$
+          $$ \comm{\phi(\vec{x},t)}{\phi(\vec{y},t)} = \comm{\pi(\vec{x},t)}{\pi(\vec{y},t)} = 0 \quad$$
 \end{itemize}
 
 \vspace{0.5cm}
 \noindent \underline{Evolución del campo escalar libre}
 \begin{itemize}
     \item Determinamos la ecuación de movimiento del campo cuántico:
-          $$ H = \frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + (\nabla \phi(\vec{y},t))^2 + m^2 \phi(\vec{y},t)^2 \right\} $$
-          $$ i \dot{\phi} = \comm{\phi}{H} \quad , \quad i \dot{\pi} = \comm{\pi}{H} $$
-          $$ i \frac{\partial}{\partial t} \phi(\vec{x},t) = \comm{\phi(\vec{x},t)}{\frac{1}{2} \int d^{d-1}y \, \pi(\vec{y},t)^2} \quad \text{(los demás términos conmutan)} $$
-          $$ = \int d^{d-1}y \, i \delta^{(d-1)}(\vec{x}-\vec{y}) \pi(\vec{y},t) $$
-          $$ = i \pi(\vec{x},t) \quad (1) $$
-          $$ i \frac{\partial}{\partial t} \pi(\vec{x},t) = \comm{\pi(\vec{x},t)}{\frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + \phi(\vec{y},t)(-\nabla^2 + m^2)\phi(\vec{y},t) \right\}} $$
-          $$ = \int d^{d-1}y \left\{ -i \delta^{(d-1)}(\vec{x}-\vec{y}) (-\nabla^2 + m^2)\phi(\vec{y},t) \right\} $$
-          $$ = -i (-\nabla^2 + m^2)\phi(\vec{x},t) \quad (2) $$
-          (1)+(2): $\frac{\partial^2 \phi}{\partial t^2} = (\nabla^2 - m^2)\phi \Rightarrow (\Box + m^2)\phi(x) = 0$ \\
+          \[
+              \left\{
+              \begin{aligned}
+                  H            & = \frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + (\nabla \phi(\vec{y},t))^2 + m^2 \phi(\vec{y},t)^2 \right\} \\
+                  i \dot{\phi} & = \comm{\phi}{H} \quad , \quad i \dot{\pi} = \comm{\pi}{H}
+              \end{aligned}
+              \right.
+          \]
+          \begin{align*}
+              i \frac{\partial}{\partial t} \phi(\vec{x},t)
+               & = \Big[ \phi(\vec{x},t), \, \underbrace{\frac{1}{2} \int d^{d-1}y \, \pi(\vec{y},t)^2}_{\mathclap{\text{los demás términos conmutan}}} \Big] \\
+               & = \int d^{d-1}y \, i \delta^{(d-1)}(\vec{x}-\vec{y}) \pi(\vec{y},t)                                                                          \\
+               & = i \pi(\vec{x},t) \tag{1} \quad \checkmark
+              \\[1em]
+              i \frac{\partial}{\partial t} \pi(\vec{x},t)
+               & = \comm{\pi(\vec{x},t)}{\frac{1}{2} \int d^{d-1}y \left\{ \pi(\vec{y},t)^2 + \phi(\vec{y},t)(-\nabla^2 + m^2)\phi(\vec{y},t) \right\}}       \\
+               & = \int d^{d-1}y \left\{ -i \delta^{(d-1)}(\vec{x}-\vec{y}) (-\nabla^2 + m^2)\phi(\vec{y},t) \right\}                                         \\
+               & = -i (-\nabla^2 + m^2)\phi(\vec{x},t) \tag{2}
+          \end{align*}
+          (1)+(2): $\frac{\partial^2 \phi}{\partial t^2} = (\nabla^2 - m^2)\phi \implies (\Box + m^2)\phi(x) = 0$ \\
           ecuación de Klein-Gordon para el campo cuántico \checkmark
 \end{itemize}
-
-\newpage
-\begin{flushright}
-    16.
-\end{flushright}
 
 \noindent Recordemos la energía de un estado de 1-partícula con momento $\vec{p}$
 $$ E_{\vec{p}} = \omega_{\vec{p}} = \sqrt{\vec{p}^2 + m^2} $$
@@ -300,16 +300,20 @@ $$ \comm{H}{a_{\vec{p}}} = -E_{\vec{p}} a_{\vec{p}} \quad , \quad \comm{H}{a_{\v
 $$ \Rightarrow H a_{\vec{p}} = a_{\vec{p}}(H - E_{\vec{p}}) \quad , \quad H^n a_{\vec{p}} = a_{\vec{p}}(H - E_{\vec{p}})^n $$
 y similarmente, $H^n a_{\vec{p}}^\dagger = a_{\vec{p}}^\dagger (H + E_{\vec{p}})^n$ \\
 \underline{Probar}:
-$$ \Rightarrow e^{iHt} a_{\vec{p}} e^{-iHt} = e^{-iE_{\vec{p}}t} a_{\vec{p}} \quad , \quad e^{iHt} a_{\vec{p}}^\dagger e^{-iHt} = e^{+iE_{\vec{p}}t} a_{\vec{p}}^\dagger $$
+$$ e^{iHt} a_{\vec{p}} e^{-iHt} = e^{-iE_{\vec{p}}t} a_{\vec{p}} \quad , \quad e^{iHt} a_{\vec{p}}^\dagger e^{-iHt} = e^{+iE_{\vec{p}}t} a_{\vec{p}}^\dagger $$
 y entonces
-$$ \phi(\vec{x},t) = \int \frac{d^{d-1}p}{(2\pi)^{d-1} \sqrt{2E_{\vec{p}}}} \left( a_{\vec{p}} e^{-i p \cdot x} + a_{\vec{p}}^\dagger e^{+i p \cdot x} \right) \Bigg|_{p^0=E_{\vec{p}}} $$
-$\leftarrow$ frecuencia positiva (destruye partícula) \\
-$\leftarrow$ frecuencia negativa (crea partícula) \\
-El campo cuántico unifica / resuelve la dualidad onda-partícula:
+\begin{align*}
+    \phi(\vec{x},t) = \int \frac{d^{d-1}p}{(2\pi)^{d-1} \sqrt{2E_{\vec{p}}}} \Bigg(
+     & \underbrace{a_{\vec{p}} e^{-i p \cdot x}}_{\mathclap{\substack{\text{frecuencia positiva}      \\ \text{(destruye partícula)}}}}
+    \quad+\quad
+    \underbrace{a_{\vec{p}}^\dagger e^{+i p \cdot x}}_{\mathclap{\substack{\text{frecuencia negativa} \\ \text{(crea partícula)}}}}
+    \Bigg) \Bigg|_{p^0=E_{\vec{p}}}
+\end{align*}
+El campo cuántico unifica / resuelve la dualidad onda-partícula.
 \begin{itemize}
     \item $\phi(x)$ es un operador que, actuando sobre el espacio de Hilbert crea y destruye partículas (excitaciones del campo).
     \item al mismo tiempo, $\phi(x)$ obedece la ecuación de Klein-Gordon y los dos términos en $\phi$ son soluciones de onda.
-    \item la función de onda $\Psi$ es un estado del espacio de Hilbert.
+    \item la función de onda $\ket{\Psi}$ es un estado del espacio de Hilbert.
 \end{itemize}
 
 \vspace{0.5cm}
@@ -318,58 +322,49 @@ El campo cuántico unifica / resuelve la dualidad onda-partícula:
     \item Un postulado fundamental en Física es causalidad: la causa precede al efecto en todo sistema de referencia.
 \end{itemize}
 
-\newpage
-\begin{flushright}
-    17.
-\end{flushright}
-
 \noindent En sistemas clásicos relativistas esto implica: velocidad máxima de propagación es $c$ (velocidad de la luz).
 Si el efecto estuviera afuera del cono de luz futuro de la causa, podemos aplicar un boost a otro sistema de referencia para hacer que suceda antes que la causa.
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{images/diagram_3_17_a.png}
+\end{center}
 
 \noindent ¿Qué implica la causalidad en mecánica cuántica?
 \begin{itemize}
     \item \underline{Microcausalidad}: dados dos operadores observables $O_1, O_2$
-          $$ \comm{O_1(x)}{O_2(y)} = 0 \quad \forall (x-y)^2 < 0 $$
-          Requerimos que todos los operadores conmuten si están separados por una distancia tipo espacio. \\
-          En mecánica cuántica una medición perturba el sistema. \\
-          ¡Una medición en $x$ no puede afectar a una medición en $y$ si $(x,y)$ no están causalmente conectados! \\
-          Si tuviéramos $\comm{O_1}{O_2} \neq 0$ para $(x-y)^2 < 0$ un observador en $x$ puede decidir si medir o no $O_1(x)$. Un observador en $y$, midiendo $O_2(y)$ detecta lo que hizo $O_1$ a partir de lo que mide (ya que $O_2 \ket{\psi} \neq O_2 O_1 \ket{\psi}$). \\
-          $\Rightarrow$ comunicación a velocidad $> c$.
+          $$ \comm{\mathcal O_1(x)}{\mathcal O_2(y)} = 0 \quad \forall (x-y)^2 < 0 $$
+          Requerimos que todos los operadores conmuten si están separados por una distancia tipo espacio.
 \end{itemize}
-
-\newpage
-\begin{flushright}
-    18.
-\end{flushright}
-
+Una medición en $x$ no |puede afectar a una medición en $y$ si $(x,y)$ no están causalmente conectados
 \begin{center}
-    \includegraphics[width=0.6\textwidth]{images/diagram_3_18.png}
+    \includegraphics[width=0.6\textwidth]{images/diagram_3_17_b.png}
 \end{center}
+En mecánica cuántica una medición perturba el sistema. Si tuviéramos $\comm{\mathcal O_1}{\mathcal O_2} \neq 0$ para $(x-y)^2 < 0$ un observador en $x$ puede decidir si medir o no $\mathcal O_1(x)$. Un observador en $y$, midiendo $\mathcal O_2(y)$ detecta lo que hizo $\mathcal O_1$ a partir de lo que mide (ya que $\mathcal O_2 \ket{\psi} \neq \mathcal O_2 \mathcal O_1 \ket{\psi}$).\\
+$\Rightarrow$ comunicación a velocidad $> c$.
 
 \noindent Definimos $\Delta(x,y) \equiv \comm{\phi(x)}{\phi(y)}$ \\
-Usando la expresión de $\phi(\vec{x},t)$ en término de $a, a^\dagger$ y la relación de conmutación entre $a, a^\dagger$ \\
+Usando la expresión de $\phi(\vec{x},t)$ en términos de $a, a^\dagger$ y la relación de conmutación entre $a, a^\dagger$ \\
 (mostrar) $$ \Delta(x,y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2E_{\vec{p}}} \left( e^{-i p \cdot (x-y)} - e^{i p \cdot (x-y)} \right) $$
 \begin{itemize}
     \item $\Delta(x,y)$ invariante de Lorentz sólo puede depender de $s^2 \equiv (x-y)^2$. \\
           Si $s^2 < 0$, hagamos transformación de Lorentz tal que $x^0 = y^0$ \\
           (transformación de Lorentz describe esta hipérbola)
-          $$ \Delta(s) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2(\vec{p}^2 + m^2)^{1/2}} \left( e^{i \vec{p} \cdot (\vec{x}-\vec{y})} - e^{-i \vec{p} \cdot (\vec{x}-\vec{y})} \right) $$
-          Redefiniendo $\vec{p} \rightarrow -\vec{p}$ en el segundo término, tenemos dos contribuciones iguales y opuestas \\
-          $\Rightarrow \Delta(x,y) = 0 \quad \text{si} \quad (x-y)^2 < 0$. \\
-          El campo escalar libre respeta causalidad. \\
-          (Si $(x-y)^2 > 0 \Rightarrow \Delta(x,y) \neq 0$.)
-    \item Causalidad es uno de los axiomas de QFT.
-\end{itemize}
 
-\newpage
-\begin{flushright}
-    19.
-\end{flushright}
+\end{itemize}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{images/diagram_3_18.png}
+\end{center}
+$$ \Delta(s) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2(\vec{p}^2 + m^2)^{1/2}} \left( e^{i \vec{p} \cdot (\vec{x}-\vec{y})} - e^{-i \vec{p} \cdot (\vec{x}-\vec{y})} \right) $$
+Redefiniendo $\vec{p} \rightarrow -\vec{p}$ en el segundo término, tenemos dos contribuciones iguales y opuestas.
+
+$\therefore \Delta(x,y) = 0 \quad \text{si} \quad (x-y)^2 < 0$. El campo escalar libre respeta causalidad. \\
+(Si $(x-y)^2 > 0 \Rightarrow \Delta(x,y) \neq 0$.)
+
+\textbf{Causalidad es uno de los axiomas de QFT.}
 
 \noindent \underline{Propagador (función de Wightman)}
 \begin{itemize}
-    \item Observable importante en QFT: se prepara un estado de 1-partícula en $y$. Amplitud para encontrarla en $x$:
-          $$ D(x,y) = \matrixel{0}{\phi(x)\phi(y)}{0} \quad \text{propagador} $$
+    \item Observable importante en QFT: se prepara un estado de una partícula en $y$. Amplitud para encontrarla en $x$:
+          $$ D(x,y) = \matrixel{0}{\phi(x)\phi(y)}{0} \quad \textbf{propagador} $$
           Reemplazando las expresiones para $\phi(x), \phi(y)$ con operadores de creación y destrucción, sólo sobrevive
           $$ \matrixel{0}{a_{\vec{p}} a_{\vec{q}}^\dagger}{0} = (2\pi)^{d-1} \delta^{(d-1)}(\vec{p}-\vec{q}) $$
           $$ \Rightarrow D(x,y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2E_{\vec{p}}} e^{-i p \cdot (x-y)} \quad \text{invariante de Lorentz } \checkmark $$
@@ -377,26 +372,19 @@ Usando la expresión de $\phi(\vec{x},t)$ en término de $a, a^\dagger$ y la rel
           1) \underline{Adentro del cono de luz}: para $(x-y)^2 > 0$ Como $D(x,y)$ sólo depende de $s^2 = (x-y)^2$, podemos boostear para elegir $\vec{x} = \vec{y} = 0 \quad ; \quad x^0 - y^0 = t > 0$
           $$ \Rightarrow D(x-y) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{2(\vec{p}^2 + m^2)^{1/2}} e^{-i (\vec{p}^2 + m^2)^{1/2} t} $$
           La integral sólo depende de $\vec{p}^2 \Rightarrow$ usar coordenadas esféricas:
-          $$ \vec{p} = p\hat{n} \quad , \quad \hat{n} \cdot \hat{n} = 1 $$
+          $$ \vec{p} = p\hat{n} \quad , \quad \hat{n} \cdot \hat{n} = 1 \quad , \quad \hat n \in \mathbb{R}^{d-1}$$
           $$ D(x-y) = \frac{1}{(2\pi)^{d-1}} \int d^{d-2}\Omega \int_0^\infty dp \, \frac{p^{d-2}}{2(p^2 + m^2)^{1/2}} e^{-i(p^2 + m^2)^{1/2}t} $$
 \end{itemize}
 
-\newpage
-\begin{flushright}
-    20.
-\end{flushright}
-
 $$ \int d^{d-2}\Omega = \text{Vol}(S^{d-2}) = \frac{2\pi^{\frac{d-1}{2}}}{\Gamma(\frac{d-1}{2})} $$
 $$ \Rightarrow D(x-y) = \frac{\text{Vol}(S^{d-2})}{2(2\pi)^{d-1}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} e^{-i(p^2 + m^2)^{1/2}t} $$
-Estimación: la integral converge ya que para $p \rightarrow \infty$ se cancelan las oscilaciones rápidas. Para $t \gg m, p \sim m$
+Estimación: la integral converge ya que para $p \rightarrow \infty$ se cancelan las oscilaciones rápidas. Para $t \gg 1/m,\, p \sim m$
 $$ D(x-y) \sim m^{d-2} e^{-imt} \quad \text{oscilatorio.} $$
 
 2) \underline{Afuera del cono de luz}: $(x-y)^2 < 0$. Boosteamos a $x^0 - y^0 = 0 \quad , \quad \vec{x} - \vec{y} = r\hat{z}$.
 $$ D(x-y) = \frac{1}{2(2\pi)^{d-1}} \int d^{d-2}\Omega \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} e^{i p r \cos\theta} $$
-Usar: $d\Omega_{d-2} = d\theta \sin^{d-3}\theta d\Omega_{d-3}$ \\
-($d\Omega_{d-2}^2 = d\theta^2 + \sin^2\theta d\Omega_{d-3}^2$)
+Usar: $d\Omega_{d-2} = d\theta \sin^{d-3}\theta d\Omega_{d-3}$ ($d\Omega_{d-2}^2 = d\theta^2 + \sin^2\theta d\Omega_{d-3}^2$)
 $$ \Rightarrow D(x-y) = \frac{\text{Vol}(S^{d-3})}{2(2\pi)^{d-1}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} \int_0^\pi d\theta \sin^{d-3}\theta e^{i p r \cos\theta} $$
 Representación integral: $J_\nu(z) = \frac{(z/2)^\nu}{\sqrt{\pi} \Gamma(\nu + 1/2)} \int_0^\pi d\theta \sin^{2\nu}\theta e^{i z \cos\theta}$
 $$ \Rightarrow D(x-y) = \frac{1}{(2\pi)^{\frac{d-1}{2}}} \int_0^\infty dp \, \frac{p^{d-2}}{(p^2 + m^2)^{1/2}} \frac{J_{\frac{d-3}{2}}(pr)}{(pr)^{\frac{d-3}{2}}} $$
-Esta integral se puede hacer exacta (da $K_{\frac{d-3}{2}}(mr)$). \\
-En el plano complejo, la contribución viene del corte de $(p^2 + m^2)^{1/2}$ en $p = i m$
+Esta integral se puede hacer exacta (da $\sim K_{\frac{d-3}{2}}(mr)$). En el plano complejo, la contribución viene del corte de $(p^2 + m^2)^{1/2}$ en $p = i m$
