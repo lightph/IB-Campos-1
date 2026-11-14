@@ -1,0 +1,64 @@
+% !TeX program = xelatex
+\documentclass[11pt, a4paper]{article}
+
+% --- Required System Fonts and Geometry ---
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[spanish]{babel}
+% --- QFT Mathematics & Formatting Packages ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}   % Automates bra-ket, derivatives, matrices
+\usepackage{slashed}   % For Feynman slash notation (e.g., \slashed{p})
+\usepackage{graphicx}  % For inserting diagram screenshots later
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+% --- Custom QFT Macros ---
+% These will save you hundreds of keystrokes over a semester.
+\newcommand{\lag}{\mathcal{L}}          % Lagrangian density
+\newcommand{\ham}{\mathcal{H}}          % Hamiltonian density
+\newcommand{\hc}{\text{h.c.}}           % Hermitian conjugate
+\newcommand{\D}{\mathcal{D}}            % Path integral measure
+\newcommand{\del}{\partial}             % Shorthand for partial derivative
+\newcommand{\mink}{\eta_{\mu\nu}}       % Minkowski metric
+
+\title{Tería de Campos 1}
+\author{Gonzalo Torroba}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ==============================================================================
+% INSTRUCTIONS FOR FEDORA:
+% When editing locally in TeXstudio, replace the text in each section below 
+% with the \input{} command pointing to your transcribed chapter files.
+% ==============================================================================
+
+\section{Classical Fields}
+% \input{01_classical_fields.tex}
+
+\textit{[Placeholder: On your local machine, create a file named \texttt{01\_classical\_fields.tex}, paste your Gemini/Pix2Tex transcriptions there, and uncomment the \texttt{\textbackslash input} command above.]}
+
+\newpage
+\section{Fermion Fields}
+% \input{02_fermion_fields.tex}
+
+\textit{[Placeholder: On your local machine, create a file named \texttt{02\_fermion\_fields.tex}, paste your transcriptions there, and uncomment the \texttt{\textbackslash input} command above.]}
+
+\newpage
+\section{Campos cuánticos}
+\input{03_campos_cuanticos.tex}
+
+
+\newpage
+\section{Path Integrals}
+% \input{04_path_integrals.tex}
+
+\textit{[Placeholder: On your local machine, create a file named \texttt{04\_path\_integrals.tex}, paste your transcriptions there, and uncomment the \texttt{\textbackslash input} command above.]}
+
+\end{document}
