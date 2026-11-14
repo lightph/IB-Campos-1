@@ -107,81 +107,57 @@ Comentario: esta es una versión simplificada de fonones. La teoría completa in
     \item Límite al continuo: $a \rightarrow 0 \Rightarrow E \ll 1/a$ (cutoff)
 \end{itemize}
 
-\newpage
-\begin{flushright}
-    7.
-\end{flushright}
-
 \noindent Sólo los modos con $k \simeq \pm k_F$ se activan ($E \ll 1/a$)
 $$ H = \int_{-\pi/a}^{\pi/a} \frac{dk}{2\pi} E_k \psi_k^\dagger \psi_k \simeq \sum_{i=\pm} \int_{-\Lambda}^{\Lambda} \frac{d\tilde{k}}{2\pi} (\pm v_F \tilde{k}) \psi_i^\dagger(\tilde{k}) \psi_i(\tilde{k}) $$
-donde $v_F = 2at$ y en $k = \tilde{k} \pm k_F$, con cutoff $\Lambda \sim 1/a$ \\
+donde $v_F = 2at$ y $k = \tilde{k} \pm k_F$ en la sumatoria, con cutoff $\Lambda \sim 1/a$ \\
 Volviendo a espacio posición, $\psi_\pm(x) = \int d\tilde{k} e^{i\tilde{k}x} \psi_\pm(\tilde{k})$
 $$ H = -i \sum_{\pm} \int dx \, \psi_\pm^\dagger(x,t) (\pm v_F \del_x) \psi_\pm(x,t) $$
 $$ \acomm{\psi_\pm^\dagger(x,t)}{\psi_\pm(x',t)} = \delta(x-x') $$
 $$ S = \int dt dx \left[ i \sum_{\pm} \psi_\pm^\dagger(x,t) (\del_t \pm v_F \del_x) \psi_\pm(x,t) \right] $$
-$\rightarrow$ Campo fermiónico cuántico no relativista. \\
-En este límite $a \rightarrow 0$ podemos re-escalear coords. para elegir $v_F = 1 \dots$ se obtiene fermión de Dirac en d=1+1, siendo $\pm$ las dos quiralidades.
+\textbf{Campo fermiónico cuántico no relativista.} \\
+En este límite $a \rightarrow 0$ podemos re-escalear coordenadas para elegir $v_F = 1$. Se obtiene fermión de Dirac en d=1+1, siendo $\pm$ las dos quiralidades.
 
 \vspace{0.5cm}
 \subsection{CAMPO ESCALAR CUÁNTICO RELATIVISTA}
 \begin{itemize}
-    \item Ahora pasamos a campos cuánticos relativistas en el continuo, es decir operadores $\hat{\phi}(\vec{x},t)$. (En general los escribimos sin $\hat{}$ : $\phi(\vec{x},t)$). \\
-          Pero está bueno mantener la intuición de modelos en la red de la sección anterior. Esto corresponde a un cutoff (regularización) en \underline{distancias} $\Delta x \gg a$, \underline{momentos} $p \ll 1/a$.
+    \item Ahora pasamos a campos cuánticos relativistas en el continuo, es decir operadores $\hat{\phi}(\vec{x},t)$. (En general los escribimos sin $\hat{}$ : $\phi(\vec{x},t)$).
+    \item Pero está bueno mantener la intuición de modelos en la red de la sección anterior. Esto corresponde a un cutoff (regularización) en \underline{distancias} $\Delta x \gg a$, \underline{momentos} $p \ll 1/a$. Va a ser útil para ``regularizar'' la teoría, debido a distintos infinitos que aparecen, asociados al número infinito de grados de libertad (en el continuo).
 \end{itemize}
-
-\newpage
-\begin{flushright}
-    8.
-\end{flushright}
-
-\noindent Va a ser útil para ``regularizar'' la teoría, debido a distintos infinitos que aparecen, asociados al nro. \textcolor{red}{infinito} de grados de lib. (en el continuo).
 
 \vspace{0.5cm}
 \noindent \underline{Cuantización canónica}
 \begin{itemize}
-    \item Para asegurar la inv. relativista de la teoría cuántica, partimos de la acción (inv. Lorentz construida a partir de campos), pasamos al Hamiltoniano y cuantizamos. \\
+    \item Para asegurar la inv. relativista de la teoría cuántica, partimos de la acción invariante de Lorentz (construida a partir de campos), pasamos al Hamiltoniano y cuantizamos. \\
           Consideremos el campo escalar real libre, y luego agregamos interacciones.
-          $$ S = \int d^4x \left\{ \frac{1}{2} \mink^{\mu\nu} \del_\mu \phi \del_\nu \phi - \frac{1}{2} m^2 \phi^2 \right\} $$
+          $$ S = \int d^dx \left\{ \frac{1}{2} \eta^{\mu\nu} \del_\mu \phi \del_\nu \phi - \frac{1}{2} m^2 \phi^2 \right\} $$
           $$ \pi(\vec{x},t) = \frac{\delta S}{\delta \dot{\phi}(\vec{x},t)} = \dot{\phi}(\vec{x},t) $$
           $$ H = \int d^{d-1}x \left\{ \pi(\vec{x},t) \dot{\phi}(\vec{x},t) - \lag \right\} $$
           $$ = \int d^{d-1}x \left\{ \frac{1}{2} \pi(\vec{x},t)^2 + \frac{1}{2} (\nabla \phi(\vec{x},t))^2 + \frac{1}{2} m^2 \phi(\vec{x},t)^2 \right\} $$
-          Ahora promovemos $\phi, \pi$ a operadores con relacs. de conmutación canónica. Vamos a considerar primero la \underline{representación de Schrödinger}, donde los operadores son indep. de t y los estados evolucionan.
+          Ahora promovemos $\phi, \pi$ a operadores con relaciones de conmutación canónica. Vamos a considerar primero la \underline{representación de Schrödinger}, donde los operadores son independientes de $t$ y los estados evolucionan.
           $$ \hat{H} = \int d^{d-1}x \left\{ \frac{1}{2} \hat{\pi}(\vec{x})^2 + \frac{1}{2} (\nabla \hat{\phi}(\vec{x}))^2 + \frac{1}{2} m^2 \hat{\phi}(\vec{x})^2 \right\} $$
           $$ \Rightarrow \comm{\hat{\phi}(\vec{x})}{\hat{\pi}(\vec{y})} = i \delta^{(d-1)}(\vec{x}-\vec{y}) $$
           $$ \comm{\hat{\phi}(\vec{x})}{\hat{\phi}(\vec{y})} = \comm{\hat{\pi}(\vec{x})}{\hat{\pi}(\vec{y})} = 0 $$
+          \noindent $\equiv$ límite al continuo de una red (d-1)-dimensional de osciladores armónicos acoplados, con coeficientes específicos para que sea invariante Lorentz (e.g. $v=c$). \\
+          (En general vamos a omitir el $\hat{}$, $\phi$ = operador o función dependiendo del contexto).
+
 \end{itemize}
 
-\newpage
-\begin{flushright}
-    9.
-\end{flushright}
-
-\noindent $\rightarrow$ límite al continuo de una red (d-1)-dim. de osciladores armónicos acoplados, con coef. específicos para que sea inv. Lorentz (e.g. $v=c$). \\
-(En general vamos a omitir el $\hat{}$, $\phi$ = operador o función dependiendo del contexto).
-
 \begin{itemize}
-    \item Ops. creación y destrucción: recordemos que para un \underline{único} oscilador armónico,
-          $$ H = \frac{1}{2} p^2 + \frac{1}{2} \omega^2 \phi^2 $$
+    \item Operadores creación y destrucción: recordemos que para un \underline{único} oscilador armónico,
+          $$ H_1 = \frac{1}{2} p^2 + \frac{1}{2} \omega^2 \phi^2 $$
           el espectro se encuentra escribiendo
           $$ \phi = \frac{1}{\sqrt{2\omega}} (a + a^\dagger) \quad , \quad p = -i \sqrt{\frac{\omega}{2}} (a - a^\dagger) $$
           $$ \comm{\phi}{p} = i \Rightarrow \comm{a}{a^\dagger} = 1 $$
-          $$ \Rightarrow H = \omega \left( a^\dagger a + \frac{1}{2} \right) \quad , \quad \comm{H}{a^\dagger} = \omega a^\dagger \quad , \quad \comm{H}{a} = -\omega a $$
-          y los autoestados de H son $\ket{n} = (a^\dagger)^n \ket{0}$ \\
-          donde $E_n = (n + \frac{1}{2})\omega$ y el estado fund. $\ket{0} : a\ket{0} = 0$
+          $$ \Rightarrow H_1= \omega \left( a^\dagger a + \frac{1}{2} \right) \quad , \quad \comm{H_1}{a^\dagger} = \omega a^\dagger \quad , \quad \comm{H_1}{a} = -\omega a $$
+          y los autoestados de $H_1$ son $\ket{n} = (a^\dagger)^n \ket{0}$ donde $E_n = (n + \frac{1}{2})\omega$ y el estado fundamental: $\ket{0} : a\ket{0} = 0$
 
-          Para el campo escalar, recordemos la ec. mov. :
-          $$ (\del_t^2 - \nabla^2 + m^2)\phi(x,t) = 0 \Rightarrow \phi(\vec{x},t) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} e^{i\vec{p}\cdot\vec{x}} \phi_{\vec{p}}(t) $$
+          Para el campo escalar, recordemos la ecuación de movimiento :
+          $$ \Box\phi+m^2\phi = 0 \Rightarrow \phi(\vec{x},t) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} e^{i\vec{p}\cdot\vec{x}} \phi_{\vec{p}}(t) $$
           donde $\phi_{\vec{p}}^* = \phi_{-\vec{p}}$ para que $\phi(\vec{x})^* = \phi(\vec{x})$
 
-          Ec. KG queda $\left(\pdv[2]{}{t} + \omega_p^2\right) \phi_{\vec{p}}(t) = 0 \quad , \quad \omega_p = \sqrt{\vec{p}^2 + m^2}$ \\
-          $\rightarrow$ Ec. mov. oscilador armónico c/ frec. $\omega_p$. \\
-          Ent. para c/ $\vec{p}$ tenemos un oscilador armónico indep. $\rightarrow$ sabemos cómo cuantizarlo!
+          La ecuación de KG queda $\left(\pdv[2]{}{t} + \omega_p^2\right) \phi_{\vec{p}}(t) = 0 \quad , \quad \omega_p = \sqrt{\vec{p}^2 + m^2}$ \\
+          $\rightarrow$ Ecuación de  movimiento del oscilador armónico con frecuencia $\omega_p$. Entonces para cada $\vec{p}$ tenemos un oscilador armónico independiente y sabemos cómo cuantizarlo.
 \end{itemize}
-
-\newpage
-\begin{flushright}
-    10.
-\end{flushright}
 
 \noindent Hacemos lo mismo para $\phi(\vec{x})$, donde c/ modo de Fourier se trata como un oscilador indep. con su $a_{\vec{p}}, a_{\vec{p}}^\dagger$ :
 $$ \phi(\vec{x}) = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \frac{1}{\sqrt{2\omega_p}} (a_{\vec{p}} e^{i\vec{p}\cdot\vec{x}} + a_{\vec{p}}^\dagger e^{-i\vec{p}\cdot\vec{x}}) $$
@@ -193,8 +169,8 @@ $$ \comm{\phi(\vec{x})}{\pi(\vec{y})} = i \delta^{(d-1)}(\vec{x}-\vec{y}) \Leftr
 Reemplazando esta expansión en el Hamiltoniano,
 $$ H = \int \frac{d^{d-1}p}{(2\pi)^{d-1}} \omega_p \left( a_{\vec{p}}^\dagger a_{\vec{p}} + \frac{1}{2} \comm{a_{\vec{p}}}{a_{\vec{p}}^\dagger} \right) $$
 \begin{itemize}
-    \item El segundo término es formalmente divergente; $\comm{a_{\vec{p}}}{a_{\vec{p}}^\dagger} \propto \delta^{(d-1)}(0)$. \\
-          Viene de sumar energías de punto 0 ($\frac{1}{2}\hbar\omega$) para un número infinito de osciladores (uno en cada sitio). \\
-          Además $\int d^{d-1}p \, \omega_p$ también diverge, debido a que $\omega_p \sim |\vec{p}|$ (div. ultravioleta). \\
-          $\rightarrow$ este tipo de divs. UV aparecen mucho en QFT. Una forma de regularizarlas es c/ red.
+    \item El segundo término es formalmente divergente; $\comm{a_{\vec{p}}}{a_{\vec{p}}^\dagger} \propto \delta^{(d-1)}(0)$. Viene de sumar energías de punto 0 ($\frac{1}{2}\hbar\omega$) para un número infinito de osciladores (uno en cada sitio).\\
+          Además $\int d^{d-1}p \, \omega_p$ también diverge, debido a que $\omega_p \sim |\vec{p}|$ (divergencia ultravioleta).
+    \item[*] Este tipo de divergencias UV aparecen mucho en QFT. Una forma de regularizarlas es con la red.
 \end{itemize}
+
