@@ -15,3 +15,4 @@
 
 # But do NOT ignore the reference files inside the pdfs/ folder
 !pdfs/
+pdfs/
